@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: pyrrhus/reverseproxy 
+  backend_user:
+    build:
+      context: ../../restapi-user-backend
+    image: pyrrhus/udacity-restapi-user
+  backend_feed:
+    build:
+      context: ../../restapi-feed-backend
+    image: pyrrhus/udacity-restapi-feed
+  frontend:
+    build:
+      context: ../../client-frontend
+    image: pyrrhus/udacity-frontend:local

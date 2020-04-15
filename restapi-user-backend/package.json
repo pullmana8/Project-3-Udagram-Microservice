@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "tsc": "tsc",
-    "dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts",
+    "dev": "tsnd --respawn --transpileOnly --inspect -- ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
@@ -32,8 +32,8 @@
     "@types/express": "^4.17.6",
     "@types/node": "^13.11.1",
     "@types/validator": "^13.0.0",
-    "ts-node-dev": "^1.0.0-pre.44",
+    "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^6.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.5.3"
   }
 }

@@ -1,40 +1,40 @@
-import express from 'express'
-import bodyParser from 'body-parser'
+import express from 'express';
+import bodyParser from 'body-parser';
 
-import { config } from './config/config'
-import { sequelize } from './sequelize'
+import { config } from './config/config';
+import { sequelize } from './sequelize';
 
-import { IndexRouter } from './controllers/v0/index.router'
-import { V0MODELS } from './controllers/v0/model.index'
+import { IndexRouter } from './controllers/v0/index.router';
+import { V0MODELS } from './controllers/v0/model.index';
 
 const c = config.dev;
 
-(async () => {
-  await sequelize.addModels(V0MODELS)
-  await sequelize.sync()
+async () => {
+  await sequelize.addModels(V0MODELS);
+  await sequelize.sync();
 
-  const app = express()
-  const port = process.env.PORT || 8080
+  const app = express();
+  const port = process.env.PORT || 8080;
 
-  app.use(bodyParser.json())
+  app.use(bodyParser.json());
 
   app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', c.url)
+    res.header('Access-Control-Allow-Origin', c.url);
     res.header(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    )
-    next()
-  })
+    );
+    next();
+  });
 
-  app.use('/api/v0', IndexRouter)
+  app.use('/api/v0', IndexRouter);
 
   app.get('/', async (req, res) => {
-    res.send('/api/v0')
-  })
+    res.send('/api/v0');
+  });
 
   app.listen(port, () => {
-    console.log(`server running ` + c.url)
-    console.log(`press CTRL+C to stop server`)
-  })
-})
+    console.log(`server running ` + c.url);
+    console.log(`press CTRL+C to stop server`);
+  });
+};
