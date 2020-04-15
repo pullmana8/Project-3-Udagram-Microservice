@@ -7,7 +7,7 @@ import { sequelize } from './sequelize'
 import { IndexRouter } from './controllers/v0/index.router'
 import { V0MODELS } from './controllers/v0/model.index'
 
-const c = config.dev
+const c = config.dev;
 
 (async () => {
   await sequelize.addModels(V0MODELS)
