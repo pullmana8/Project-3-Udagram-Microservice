@@ -1,0 +1,22 @@
+{
+  "name": "restapi-feed-backend",
+  "version": "1.0.0",
+  "description": "RestAPI Backend for Feed",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Antonette Caldwell",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.30",
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.11.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "tslint": "^6.1.1",
+    "typescript": "^3.8.3"
+  }
+}
