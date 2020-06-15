@@ -10,7 +10,9 @@
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Antonette Caldwell",
   "license": "ISC",
@@ -26,7 +28,8 @@
     "reflect-metadata": "^0.1.13",
     "sequelize": "^5.21.6",
     "sequelize-typescript": "^1.1.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.30",
@@ -35,5 +38,6 @@
     "@types/validator": "^13.0.0",
     "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^6.1.1"
-  }
+  },
+  "snyk": true
 }
