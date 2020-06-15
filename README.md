@@ -1,18 +1,14 @@
 # Udagram Microservices
----
 Antonette Caldwell Udacity Cloud Developer Nanogree program
 
 The url to the project: https://github.com/pullmana8/Project-3-Udagram-Microservice
 
 # Getting Started
----
 
 # Purpose
----
 To design, deploy and operate a cloud native photo sharing application
 
 # Prerequisites
----
 You will need to have the following packages installed:
 * Docker
 * AWS CLI
@@ -20,10 +16,9 @@ You will need to have the following packages installed:
 * Kubectl
 
 # Setup Environment Variables
----
 
 # Setup Docker Environment
----
+
 ![Image of Docker Compose](screenshots/docker-compose-build.png)
 
 ![Image of Docker Compose up](screenshots/docker-compose-up.png)
